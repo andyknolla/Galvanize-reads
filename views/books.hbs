@@ -4,3 +4,33 @@
         <li>{{this.name}}</li>
     {{/each}}
 </ul>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add a Book</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h3>Add a Book</h3>
+        <form id='add_book' class="" action="add_book" method="post">
+            <div class='input-field'>
+                <label for='title'>Title</label>
+                <input type="text" id='title' name="title" value="">
+            </div>
+            <div class='input-field'>
+                <label for="genre">Genre</label>
+                <input type="text" id='genre' name="genre" value="">
+            </div>
+            <div class="input-field">
+                <label for="cover_image">Portrait URL</label>
+                <input type="url" id="cover_image" name="cover_image" value="">
+            </div>
+            <div class="input-field">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="8" cols="40"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light" form="add_author" type="submit">submit<i class="material-icons right">send</i></button>
+    </div>
+</div>

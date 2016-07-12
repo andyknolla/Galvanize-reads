@@ -1,1 +1,32 @@
 <h1>{{word}}</h1>
+
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add an Author</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h3>Add an Author</h3>
+        <form id='add_author' class="" action="add_author" method="post">
+            <div class='input-field'>
+                <label for='first_name'>First Name</label>
+                <input type="text" id='first_name' name="fist_name" value="">
+            </div>
+            <div class='input-field'>
+                <label for="last_name">Last Name</label>
+                <input type="text" id='last_name' name="last_name" value="">
+            </div>
+            <div class="input-field">
+                <label for="portrait">Portrait URL</label>
+                <input type="text" id="portrait" name="portait" value="">
+            </div>
+            <div class="input-field">
+                <label for="bio">Author Bio</label>
+                <textarea id="bio" name="bio" rows="8" cols="40"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light" form="add_author" type="submit">submit<i class="material-icons right">send</i></button>
+    </div>
+</div>

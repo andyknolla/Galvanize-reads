@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('authors', {word:'dirka'})
+  res.render('authors', {word:'stuff'})
 });
 
 module.exports = router;
