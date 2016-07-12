@@ -1,0 +1,31 @@
+<div class='container'>
+    <div class="row">
+        <div class="col s1 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="http://www.missourireview.com/tmr-blog/files/writers-block.jpg">
+                    <span class="card-title">Authors</span>
+                </div>
+                <div class="card-action">
+                    <a href="/authors">All Authors</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s1 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="http://marketmybook.in/wp-content/uploads/2013/05/Library-Books.jpg">
+                    <span class="card-title">Books</span>
+                </div>
+                <div class="card-action">
+                    <a href="/books">All Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ul>
+    {{#each books}}
+        <li>{{this.name}}</li>
+    {{/each}}
+</ul>
