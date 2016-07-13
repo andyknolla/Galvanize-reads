@@ -41,6 +41,7 @@ router.get('/book_detail/:id', function(req, res, next) {
             })
         })
     })
+    
     // Edit a book
 router.get('/edit_book/:id', function(req, res, next) {
         console.log('edit route hits')
@@ -53,7 +54,6 @@ router.get('/edit_book/:id', function(req, res, next) {
             })
         })
     })
-
 router.post('/edit_book/:id', function(req, res, next) {
     queries.getBooks().where({
             'id': req.params.id
