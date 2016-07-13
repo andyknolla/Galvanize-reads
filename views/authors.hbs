@@ -8,8 +8,8 @@
                 <div class="author_info col s7 offset-s2">
                     <h3>{{this.first_name}} {{this.last_name}}</h3>
                     <p>{{this.bio}}</p>
-                    <a href="/authors/delete_author/{{authors.id}}">Delete</a>
-                    <a href="/authors/edit_author/{{authors.id}}">Edit</a>
+                    <a href="/authors/delete_author/{{this.id}}">Delete</a>
+                    <a href="/authors/edit_author/{{this.id}}">Edit</a>
                 </div>
             </div>
         {{/each}}
@@ -22,18 +22,18 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h3>Add an Author</h3>
-            <form id='add_author' class="" action="add_author" method="post">
+            <form id='add_author' class="" action="/authors/add_author" method="post">
                 <div class='input-field'>
                     <label for='first_name'>First Name</label>
-                    <input type="text" id='first_name' name="fist_name" value="">
+                    <input type="text" id='first_name' name="first_name">
                 </div>
                 <div class='input-field'>
                     <label for="last_name">Last Name</label>
-                    <input type="text" id='last_name' name="last_name" value="">
+                    <input type="text" id='last_name' name="last_name">
                 </div>
                 <div class="input-field">
                     <label for="portrait">Portrait URL</label>
-                    <input type="text" id="portrait" name="portait" value="">
+                    <input type="text" id="portrait" name="portrait">
                 </div>
                 <div class="input-field">
                     <label for="bio">Author Bio</label>

@@ -9,6 +9,9 @@ module.exports = {
   },
   getAuthors: function() {
     return knex('author').select()
+  },
+  addAuthor: function(body) {
+    return knex('author').insert(body)
   }
 
 }
