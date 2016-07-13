@@ -23,4 +23,12 @@ router.get('/delete_book/:id', function(req,res,next) {
     res.redirect('/books')
   })
 })
+
+router.get('/book_detail/:id', function(req,res,next) {
+  console.log('book detail route hits')
+  queries.getBooks().where({ 'id': req.params.id }).first().then(function(data) {
+    console.log(data);
+    res.render('book_detail', { book: data })
+  })
+})
 module.exports = router
