@@ -6,6 +6,9 @@ module.exports = {
   },
   addBook: function(body) {
     return knex('book').insert(body)
+  },
+  getAuthors: function() {
+    return knex('author').select()
   }
 
 }

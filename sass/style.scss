@@ -1,5 +1,5 @@
 body {
-  background: white;
+  background: #d7ccc8;
 }
 .container {
   width: 80%;
@@ -8,9 +8,12 @@ body {
   margin:10px;
 }
 
-.book_detail {
+.book_detail, {
   height: 400px;
 }
-.book_info {
+.author_pic {
+  height: 250px;
+}
+.book_info .author_info {
   position: absolute;
 }

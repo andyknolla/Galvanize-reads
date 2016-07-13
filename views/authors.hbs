@@ -1,12 +1,28 @@
 <h1>{{word}}</h1>
 
+<div class="container section">
+    {{#each authors}}
+        <div class="row">
+            <div class="col s2">
+                <img class="author_pic" src="{{this.portrait}}" alt="" />
+            </div>
+            <div class="author_info col s7 offset-s2">
+                <h3>{{this.first_name}} {{this.last_name}}</h3>
+                <p>{{this.bio}}</p>
+                <a href="/authors/delete_author/{{authors.id}}">Delete</a>
+                <a href="/authors/edit_author/{{authors.id}}">Edit</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
 <!-- Modal Trigger -->
 <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add an Author</a>
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
-      <h3>Add an Author</h3>
+        <h3>Add an Author</h3>
         <form id='add_author' class="" action="add_author" method="post">
             <div class='input-field'>
                 <label for='first_name'>First Name</label>
