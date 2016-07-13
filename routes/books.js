@@ -1,12 +1,19 @@
-var express = require('express');
-var router = express.Router();
-
-var books = [
-{name:'Python In A Nutshell'},{name:'Think Python'},{name:'Learning React Native'},{name:'You Don\'t Know JS: ES6 & Beyond'}, {name:'You Don\'t Know JS: Scope & Closures'},{name: 'You Don\'t Know JS: Async & Performance'}
-]
+var express = require('express')
+var router = express.Router()
+var pg = require('pg')
+var knex = require('knex')
+var queries = require('../db/queries')
 
 router.get('/', function(req, res, next) {
-  res.render('books', { books: books });
+  queries.getBooks().then(function(data) {
+    res.render('books', { books: data })
+  })
 });
 
+router.post('/add_book', function(req,res,next) {
+  console.log('book add post route hits');
+  queries.addBook(req.body).then(function(data) {
+    res.redirect('/')
+  })
+})
 module.exports = router;
