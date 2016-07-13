@@ -1,11 +1,26 @@
 body {
   background: #d7ccc8; }
 
+nav {
+  margin-bottom: 50px; }
+
 .container {
   width: 80%; }
 
 #damn-card {
   margin: 10px; }
+
+#header-logo {
+  margin-left: 15px;
+  margin-top: 15px;
+  font-size: 3.5rem; }
+
+#nav-wrapper, #nav-wrapper a {
+  height: 100px; }
+
+.secondary-links {
+  padding-top: 15px;
+  font-size: 2rem; }
 
 .book_detail {
   height: 400px; }
