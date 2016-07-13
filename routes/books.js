@@ -13,7 +13,14 @@ router.get('/', function(req, res, next) {
 router.post('/add_book', function(req,res,next) {
   console.log('book add post route hits');
   queries.addBook(req.body).then(function(data) {
-    res.redirect('/')
+    res.redirect('/books')
   })
 })
-module.exports = router;
+
+router.get('/delete_book/:id', function(req,res,next) {
+  console.log('delete route hits');
+  queries.getBooks().where({ 'id': req.params.id }).del().then(function() {
+    res.redirect('/books')
+  })
+})
+module.exports = router

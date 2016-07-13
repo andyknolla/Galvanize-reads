@@ -7,4 +7,5 @@ module.exports = {
   addBook: function(body) {
     return knex('book').insert(body)
   }
+
 }

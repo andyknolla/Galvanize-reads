@@ -9,6 +9,7 @@
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{this.title}}<i class="material-icons right">more_vert</i></span>
                     <p><a href="#">Book details</a></p>
+                    <p><a href="/books/delete_book/{{this.id}}">Delete</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{this.title}}<i class="material-icons right">close</i></span>
@@ -25,7 +26,7 @@
 <div id="modal1" class="modal">
     <div class="modal-content">
         <h3>Add a Book</h3>
-        <form id='add_book' class="" action="/books/add_book" method="post">
+        <form id='add_book' class="" action="/books/add_book" method="POST">
             <div class='input-field'>
                 <label for='title'>Title</label>
                 <input type="text" id='title' name="title" value="">
