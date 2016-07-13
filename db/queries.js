@@ -14,4 +14,8 @@ module.exports = {
     return knex('author').insert(body)
   }
 
+  // booksWithAuthors: function() {
+  //   return knex('book').where(id
+  // }
+
 }
