@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-    return Promise.all([
+    return Promise.join(
         // Inserts seed entries
         knex('book').insert({
             title: 'Python In A Nutshell',
@@ -37,5 +37,5 @@ exports.seed = function(knex, Promise) {
             cover_image: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/async_and_performance.jpg',
             description: 'No matter how much experience you have with JavaScript, odds are you don’t fully understand the language. As part of the "You Don’t Know JS" series, this concise yet in-depth guide focuses on new asynchronous features and performance techniques—including Promises, generators, and Web Workers—that let you create sophisticated single-page web applications and escape callback hell in the process.'
         })
-    ])
+    )
 }

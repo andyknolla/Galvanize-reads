@@ -7,6 +7,12 @@
             <div class="author_info col s7 offset-s2">
                 <h3>{{author.first_name}} {{author.last_name}}</h3>
                 <p>{{author.bio}}</p>
+                <h4>Books</h4>
+                <ul>
+                    {{#each books}}
+                        <li><a href="../../books/book_detail/{{this.bookId}}">{{this.title}}</a>...genre: {{this.genre}}</li>
+                    {{/each}}
+                </ul>
                 <a href="/authors/delete_author/{{author.id}}">Delete</a>
                 <a href="/authors/edit_author/{{author.id}}">Edit</a>
             </div>

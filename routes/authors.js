@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var pg = require('pg')
-var knex = require('knex')
+var knex = require('../db/knex')
 var queries = require('../db/queries')
 
 router.get('/', function(req, res, next) {
@@ -14,12 +14,26 @@ router.get('/', function(req, res, next) {
 
 // go to author detail page
 router.get('/author_detail/:id', function(req, res, next) {
-        queries.getAuthors(req.body).where({
-                'id': req.params.id
-            }).first()
+        console.log('author detail route hits')
+        knex('author').where({
+                'author.id': req.params.id
+            }).select(
+                'book.title',
+                'book.genre',
+                'author.id as authorId',
+                'author.first_name',
+                'author.last_name',
+                'author.portrait',
+                'author.bio',
+                'book.id as bookId'
+            )
+            .leftJoin('book_author', 'author.id', '=', 'author_id')
+            .rightJoin('book', 'book.id', '=', 'book_id')
             .then(function(data) {
+                console.log('author detail data : ', data);
                 res.render('author_detail', {
-                    author: data
+                    books: data,
+                    author: data[0]
                 })
             })
     })
