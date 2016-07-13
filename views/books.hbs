@@ -9,10 +9,11 @@
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{this.title}}<i class="material-icons right">more_vert</i></span>
                     <p><a href="/books/book_detail/{{this.id}}">Book details</a></p>
-                    <p><a href="/books/delete_book/{{this.id}}">Delete</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{this.title}}<i class="material-icons right">close</i></span>
+                    <p><a href="/books/delete_book/{{this.id}}">Delete</a></p>
+                    <p><a href="/books/edit_book/{{this.id}}">Edit</a></p>
                     <p>Genre: {{this.genre}}</p>
                 </div>
             </div>
@@ -49,3 +50,31 @@
         <button class="btn waves-effect waves-light" form="add_book" type="submit">submit<i class="material-icons right">send</i></button>
     </div>
 </div>
+
+<!-- <div id="modal2" class="modal">
+    <div class="modal-content">
+        <h3>Edit {{books.title}}</h3>
+        <form id='add_books' class="" action="/books/edit_book" method="POST">
+          <input type="hidden" name="id" value="{{books.id}}">
+            <div class='input-field'>
+                <label for='title'>Title</label>
+                <input type="text" id='title' name="title" value="stuff{{books.title}}">
+            </div>
+            <div class='input-field'>
+                <label for="genre">Genre</label>
+                <input type="text" id='genre' name="genre" value="{{books.genre}}">
+            </div>
+            <div class="input-field">
+                <label for="cover_image">Portrait URL</label>
+                <input type="url" id="cover_image" name="cover_image" value="{{books.cover_image}}">
+            </div>
+            <div class="input-field">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="8" cols="40">{{books.description}}</textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light" form="add_book" type="submit">submit<i class="material-icons right">send</i></button>
+    </div>
+</div> -->
