@@ -1,4 +1,5 @@
 exports.seed = function(knex, Promise) {
+  
     return Promise.join(
         // Inserts seed entries
         knex('book_author').insert({

@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
             authors: data
         })
     })
-});
+})
 
 // go to author detail page
 

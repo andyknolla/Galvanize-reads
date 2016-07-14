@@ -7,8 +7,8 @@ exports.up = function(knex, Promise) {
     table.string('portrait'),
     table.text('bio')
   })
-};
+}
 
 exports.down = function(knex, Promise) {
     return knex.schema.dropTableIfExists('author')
-};
+}
