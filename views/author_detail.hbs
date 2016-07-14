@@ -1,20 +1,19 @@
 <div class="section">
     <div class="container section">
-        <div class="row">
-            <div class="col s2">
+        <div id="author-container" class="row">
+            <div id="author-detail" class="col s2">
                 <img class="author_pic" src="{{author.portrait}}" alt="" />
             </div>
-            <div class="author_info col s7 offset-s2">
+            <div id="author-info" class="author_info col s7 offset-s2">
                 <h3>{{author.first_name}} {{author.last_name}}</h3>
                 <p>{{author.bio}}</p>
-                <h4>Books</h4>
-                <ul>
+                <!-- <ul>
                     {{#each books}}
                         <li><a href="../../books/book_detail/{{this.bookId}}">{{this.title}}</a>...genre: {{this.genre}}</li>
                     {{/each}}
-                </ul>
-                <a href="/authors/delete_author/{{author.id}}">Delete</a>
-                <a href="/authors/edit_author/{{author.id}}">Edit</a>
+                </ul> -->
+                <a class="waves-effect waves-light btn" href="/authors/delete_author/{{author.id}}">Delete</a>
+                <a class="waves-effect waves-light btn" href="/authors/edit_author/{{author.id}}">Edit</a>
             </div>
         </div>
     </div>

@@ -6,7 +6,12 @@ nav {
 }
 .container {
   width: 80%;
+  &.title-button {
+    display: flex;
+    justify-content: space-between;
+  }
 }
+
 #damn-card {
   margin:10px;
 }
@@ -16,21 +21,43 @@ nav {
   margin-left:15px;
   margin-top:15px;
   font-size: 3.5rem;
+  text-shadow: 2px 2px 6px #263238;
+  color: #5d4037
 }
 #nav-wrapper, #nav-wrapper a {
   height: 100px;
 }
+#nav-wrapper {
+  box-shadow: 5px 5px 5px gray;
+}
 .secondary-links {
   padding-top:15px;
   font-size: 2rem;
+  box-shadow: -5px 0 5px gray;
+  text-shadow: 2px 2px 6px #f0f4c3;
+  margin-left: 10px;
+  color: #5d4037;
 }
 
-.book_detail, {
-  height: 400px;
+#book-container, #author-container {
+    display: flex;
+    justify-content: flex-start;
+}
+#book_detail, #author_detail {
+  height: 350px;
+  // display: flex;
+}
+#book_info, #author_info {
+  // display:flex;
 }
 .author_pic {
   height: 250px;
 }
-.book_info .author_info {
-  position: absolute;
+.container .title-button {
+  display: flex;
+  justify-content: space-between;
+}
+.card-title #index-card {
+  font-size: 4.5rem;
+  text-shadow: 2px 2px 6px black;
 }

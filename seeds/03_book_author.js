@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-    return Promise.all([
+    return Promise.join(
         // Inserts seed entries
         knex('book_author').insert({
             book_id: 1,
@@ -15,15 +15,15 @@ exports.seed = function(knex, Promise) {
         }),
         knex('book_author').insert({
             book_id: 4,
-            author_id: 3
+            author_id: 4
         }),
         knex('book_author').insert({
             book_id: 5,
-            author_id: 3
+            author_id: 4
         }),
         knex('book_author').insert({
             book_id: 6,
-            author_id: 3
+            author_id: 4
         })
-    ])
+    )
 }

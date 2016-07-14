@@ -13,30 +13,41 @@ router.get('/', function(req, res, next) {
 });
 
 // go to author detail page
+
 router.get('/author_detail/:id', function(req, res, next) {
-        console.log('author detail route hits')
-        knex('author').where({
+        queries.getAuthors().where({
                 'author.id': req.params.id
-            }).select(
-                'book.title',
-                'book.genre',
-                'author.id as authorId',
-                'author.first_name',
-                'author.last_name',
-                'author.portrait',
-                'author.bio',
-                'book.id as bookId'
-            )
-            .leftJoin('book_author', 'author.id', '=', 'author_id')
-            .rightJoin('book', 'book.id', '=', 'book_id')
+            }).first()
             .then(function(data) {
-                console.log('author detail data : ', data);
                 res.render('author_detail', {
-                    books: data,
-                    author: data[0]
+                    author: data
                 })
             })
     })
+// router.get('/author_detail/:id', function(req, res, next) {
+//         console.log('author detail route hits')
+//         knex('author').where({
+//                 'author.id': req.params.id
+//             }).select(
+//                 'book.title',
+//                 'book.genre',
+//                 'author.id as authorId',
+//                 'author.first_name',
+//                 'author.last_name',
+//                 'author.portrait',
+//                 'author.bio',
+//                 'book.id as bookId'
+//             )
+//             .leftJoin('book_author', 'author.id', '=', 'author_id')
+//             .rightJoin('book', 'book.id', '=', 'book_id')
+//             .then(function(data) {
+//                 console.log('author detail data : ', data);
+//                 res.render('author_detail', {
+//                     books: data,
+//                     author: data[0]
+//                 })
+//             })
+//     })
     // add an author
 router.post('/add_author', function(req, res, next) {
         console.log('add author post route hits');

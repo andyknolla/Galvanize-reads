@@ -1,3 +1,7 @@
+<div class="container title-button">
+    <h2>Authors</h2>
+    <a class="waves-effect waves-light btn modal-trigger" id="add-author" href="#modal1">Add an Author</a>
+</div>
 <div class="section">
     <div class="container section">
         {{#each authors}}
@@ -8,16 +12,17 @@
                 <div class="author_info col s7 offset-s2">
                     <h3>{{this.first_name}} {{this.last_name}}</h3>
                     <p>{{this.bio}}</p>
-                    <a href="/authors/delete_author/{{this.id}}">Delete</a>
-                    <a href="/authors/edit_author/{{this.id}}">Edit</a>
-                    <a href="/authors/author_detail/{{this.id}}">Details</a>
+                    <a href="/authors/delete_author/{{this.id}}" class="waves-effect waves-light btn">Delete</a>
+                    <a href="/authors/edit_author/{{this.id}}" class="waves-effect waves-light btn">Edit</a>
+                    <a href="/authors/author_detail/{{this.id}}" class="waves-effect waves-light btn">Details</a>
                 </div>
             </div>
         {{/each}}
     </div>
-
-    <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add an Author</a>
+    <div class="container">
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add an Author</a>
+    </div>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">

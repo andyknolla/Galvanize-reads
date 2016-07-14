@@ -16,9 +16,11 @@ router.get('/', function(req, res, next) {
 // Add a book
 router.post('/add_book', function(req, res, next) {
         console.log('book add post route hits');
-        queries.addBook(req.body).then(function(data) {
-            res.redirect('/books')
-        })
+        queries.addBook(req.body)
+            .returning('id')
+            .then(function(data) {
+                res.redirect('/books')
+            })
     })
     // Delete a book
 router.get('/delete_book/:id', function(req, res, next) {
@@ -29,30 +31,40 @@ router.get('/delete_book/:id', function(req, res, next) {
             res.redirect('/books')
         })
     })
-    // Book Details
+    //  Book Details
 router.get('/book_detail/:id', function(req, res, next) {
-    console.log('book detail route hits')
-    knex('book').where({
-            'book.id': req.params.id
-        }).select(
-            'book.title',
-            'book.genre',
-            'book.cover_image',
-            'book.description',
-            'author.id as authorId',
-            'author.first_name',
-            'author.last_name'
-        )
-        .leftJoin('book_author', 'book.id', '=', 'book_id')
-        .rightJoin('author', 'author.id', '=', 'author_id')
-        .then(function(data) {
-            console.log('book detail data : ',data);
-            res.render('book_detail', {
-                book: data[0],
-                authors: data
+        queries.getBooks().where({
+                'book.id': req.params.id
+            }).first()
+            .then(function(data) {
+                res.render('book_detail', {
+                    book: data
+                })
             })
-        })
-})
+    })
+    // router.get('/book_detail/:id', function(req, res, next) {
+    //     console.log('book detail route hits')
+    //     knex('book').where({
+    //             'book.id': req.params.id
+    //         }).select(
+    //             'book.title',
+    //             'book.genre',
+    //             'book.cover_image',
+    //             'book.description',
+    //             'author.id as authorId',
+    //             'author.first_name',
+    //             'author.last_name'
+    //         )
+    //         .leftJoin('book_author', 'book.id', '=', 'book_id')
+    //         .rightJoin('author', 'author.id', '=', 'author_id')
+    //         .then(function(data) {
+    //             console.log('book detail data : ',data);
+    //             res.render('book_detail', {
+    //                 book: data[0],
+    //                 authors: data
+    //             })
+    //         })
+    // })
 
 // Edit a book
 router.get('/edit_book/:id', function(req, res, next) {

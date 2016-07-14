@@ -1,4 +1,7 @@
-<h2>Books</h2>
+<div class="container title-button">
+    <h2>Books</h2>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add a Book</a>
+</div>
 <div class='container'>
     <div class='row'>
         {{#each books}}
@@ -8,20 +11,23 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{this.title}}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="/books/book_detail/{{this.id}}">Book details</a></p>
+                    <p><a class="waves-effect waves-light btn" href="/books/book_detail/{{this.id}}">Book details</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{this.title}}<i class="material-icons right">close</i></span>
-                    <p><a href="/books/delete_book/{{this.id}}">Delete</a></p>
-                    <p><a href="/books/edit_book/{{this.id}}">Edit</a></p>
+                    <p><a class="waves-effect waves-light btn" href="/books/delete_book/{{this.id}}">Delete</a></p>
+                    <p><a class="waves-effect waves-light btn" href="/books/edit_book/{{this.id}}">Edit</a></p>
+                    <p><a class="waves-effect waves-light btn" href="/books/book_detail/{{this.id}}">Book details</a></p>
                     <p>Genre: {{this.genre}}</p>
                 </div>
             </div>
         {{/each}}
     </div>
 </div>
-<!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add a Book</a>
+<div class="container">
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add a Book</a>
+</div>
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
